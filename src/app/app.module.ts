@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco-root.module';
 
+import {StoreModule} from '@ngrx/store';
+import { materialsFeature } from './state/reducers/materials.reducer';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -14,7 +17,8 @@ import { TranslocoRootModule } from './transloco-root.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    TranslocoRootModule
+    TranslocoRootModule,
+    [StoreModule.forFeature(materialsFeature)]
   ],
   providers: [],
   bootstrap: [AppComponent]
