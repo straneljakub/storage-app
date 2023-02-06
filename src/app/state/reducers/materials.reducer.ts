@@ -30,22 +30,42 @@ export const materialsFeature = createFeature({
             ...state,
             materials: state.materials.filter(item => item.id != materialId),
         })),
-        on(MaterialsActions.editMaterial, (state, {material}) => ({
-            ...state,
-            materials: [...(state.materials.filter(item => item.id != material.id)), material],
-        })),
-        on(MaterialsActions.setCount, (state, {material}) => ({
-            ...state,
-            materials: [...(state.materials.filter(item => item.id != material.id)), material],
-        })),
-        on(MaterialsActions.addCount, (state, {material}) => ({
-            ...state,
-            materials: [...(state.materials.filter(item => item.id != material.id)), material],
-        })),
-        on(MaterialsActions.subtractCount, (state, {material}) => ({
-            ...state,
-            materials: [...(state.materials.filter(item => item.id != material.id)), material],
-        })),
+        on(MaterialsActions.editMaterial, (state, {material}) => {
+            const index = state.materials.findIndex(item => item.id == material.id);
+            const newArray = [...state.materials]; 
+            newArray[index] = material;
+            return {
+                ...state,
+                materials: newArray,
+            }
+        }),
+        on(MaterialsActions.setCount, (state, {id, count}) => {
+            const index = state.materials.findIndex(item => item.id == id);
+            const newArray = [...state.materials]; 
+            newArray[index].count = count;
+            return {
+                ...state,
+                materials: newArray,
+            }
+        }),
+        on(MaterialsActions.addCount, (state, {id, count}) => {
+            const index = state.materials.findIndex(item => item.id == id);
+            const newArray = [...state.materials]; 
+            newArray[index].count += count;
+            return {
+                ...state,
+                materials: newArray,
+            }
+        }),
+        on(MaterialsActions.subtractCount, (state, {id, count}) => {
+            const index = state.materials.findIndex(item => item.id == id);
+            const newArray = [...state.materials]; 
+            newArray[index].count -= count;
+            return {
+                ...state,
+                materials: newArray,
+            }
+        }),
     )
 });
 

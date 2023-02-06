@@ -7,9 +7,9 @@ export const MaterialsActions = createActionGroup({
         'Add Material': props<{material: Material}>(),
         'Remove Material': props<{materialId: number}>(),
         'Edit Material': props<{material: Material}>(),
-        'Set Count': props<{material: Material}>(),
-        'Add Count': props<{material: Material}>(),
-        'Subtract Count': props<{material: Material}>(),
+        'Set Count': props<{id: number, count: number}>(),
+        'Add Count': props<{id: number, count: number}>(),
+        'Subtract Count': props<{id: number, count: number}>(),
     },
 });
 
