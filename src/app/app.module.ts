@@ -8,6 +8,7 @@ import { TranslocoRootModule } from './transloco-root.module';
 
 import {StoreModule} from '@ngrx/store';
 import { materialsFeature } from './state/reducers/materials.reducer';
+import { notificationsFeature } from './state/reducers/notifications.reducer';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { materialsFeature } from './state/reducers/materials.reducer';
     AppRoutingModule,
     HttpClientModule,
     TranslocoRootModule,
-    [StoreModule.forFeature(materialsFeature)]
+    [StoreModule.forFeature(materialsFeature), StoreModule.forFeature(notificationsFeature)]
   ],
   providers: [],
   bootstrap: [AppComponent]
