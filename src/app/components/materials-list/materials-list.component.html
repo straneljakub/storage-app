@@ -1,1 +1,40 @@
-<p>materials-list works!</p>
+
+<div class="container p-2 mx-auto sm:p-4 text-gray-800">
+	<h2 class="mb-4 text-2xl font-semibold leading-tight">Materials</h2>
+	<div class="overflow-x-auto">
+		<table class="p-6 text-xs text-left whitespace-nowrap">
+			<thead>
+				<tr class="bg-gray-300">
+					<th class="p-3">Title</th>
+					<th class="p-3">Count</th>
+					<th class="p-3">Description</th>
+                    <th></th>
+				</tr>
+			</thead>
+			<tbody *ngFor="let material of materials$ | async" class="border-b bg-gray-50 border-gray-300">
+				<tr>
+					<td class="px-3 py-2">
+						<p>{{ material.title }}</p>
+					</td>
+					<td class="px-3 py-2">
+						<p class="text-gray-600">{{ material.count }}</p>
+					</td>
+					<td class="px-3 py-2">
+						<p>{{ material.description }}</p>
+					</td>
+                    <td>
+                        <button class="ml-2" type="button" (click)="AddCount(material.id)">
+                            +
+                        </button>
+                        <button class="ml-2" type="button" (click)="SubtractCount(material.id)">
+                            -
+                        </button>
+                        <button class="ml-2" type="button" (click)="Edit(material.id, material.title, material.count, material.description)">
+                            Edit
+                        </button>
+                    </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

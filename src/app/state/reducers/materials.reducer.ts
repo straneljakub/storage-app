@@ -10,7 +10,7 @@ export interface MaterialsState {
 }
 
 const initialState: MaterialsState = {
-    materials: [],
+    materials: [{id: 0, title: 'Iron', count: 0, description: 'Very heavy'}],
 }
 
 
@@ -42,7 +42,9 @@ export const materialsFeature = createFeature({
         on(MaterialsActions.setCount, (state, {id, count}) => {
             const index = state.materials.findIndex(item => item.id == id);
             const newArray = [...state.materials]; 
-            newArray[index].count = count;
+            const item = {...newArray[index]};
+            item.count = count;
+            newArray[index] = item;
             return {
                 ...state,
                 materials: newArray,
@@ -51,7 +53,9 @@ export const materialsFeature = createFeature({
         on(MaterialsActions.addCount, (state, {id, count}) => {
             const index = state.materials.findIndex(item => item.id == id);
             const newArray = [...state.materials]; 
-            newArray[index].count += count;
+            const item = {...newArray[index]};
+            item.count += count;
+            newArray[index] = item;
             return {
                 ...state,
                 materials: newArray,
@@ -60,7 +64,9 @@ export const materialsFeature = createFeature({
         on(MaterialsActions.subtractCount, (state, {id, count}) => {
             const index = state.materials.findIndex(item => item.id == id);
             const newArray = [...state.materials]; 
-            newArray[index].count -= count;
+            const item = {...newArray[index]};
+            item.count -= count;
+            newArray[index] = item;
             return {
                 ...state,
                 materials: newArray,
