@@ -18,7 +18,7 @@ export const materialsFeature = createFeature({
     name: 'materials',
     reducer: createReducer(
         initialState,
-        on(MaterialsApiActions.getMaterial, (state, { materials }) => ({
+        on(MaterialsApiActions.getMaterials, (state, { materials }) => ({
             ...state,
             materials,
         })),

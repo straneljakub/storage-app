@@ -2,6 +2,7 @@ import {createFeature, createReducer, on} from '@ngrx/store'
 import { Notification } from 'src/notification';
 
 import { NotificationsActions } from '../actions/notifications.actions';
+import { NotificationsApiActions } from '../actions/notifications.actions';
 
 
 export interface NotificationsState {
@@ -16,6 +17,10 @@ export const notificationsFeature = createFeature({
     name: 'notifications',
     reducer: createReducer(
         initialState,
+        on(NotificationsApiActions.getNotifications, (state, {notifications}) => ({
+            ...state,
+            notifications,
+        })),
         on(NotificationsActions.createNotification, (state, {notification}) => ({
             ...state,
             notifications: [...state.notifications, notification],

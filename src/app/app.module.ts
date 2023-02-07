@@ -9,10 +9,13 @@ import { TranslocoRootModule } from './transloco-root.module';
 import {StoreModule} from '@ngrx/store';
 import { materialsFeature } from './state/reducers/materials.reducer';
 import { notificationsFeature } from './state/reducers/notifications.reducer';
+import { MaterialsListComponent } from './components/materials-list/materials-list.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MaterialsListComponent,
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,6 @@ export const MaterialsActions = createActionGroup({
 export const MaterialsApiActions = createActionGroup({
     source: 'Materials API',
     events: {
-        'Get Material': props<{materials: Material[]}>(),
+        'Get Materials': props<{materials: Material[]}>(),
     },
 });

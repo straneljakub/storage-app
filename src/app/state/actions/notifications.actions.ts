@@ -9,4 +9,9 @@ export const NotificationsActions = createActionGroup({
     },
 })
 
-// TODO API 
+export const NotificationsApiActions = createActionGroup({
+    source: 'Notifications API',
+    events: {
+        'Get Notifications': props<{notifications: Notification[]}>(),
+    },
+});
