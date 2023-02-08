@@ -12,3 +12,8 @@ export const selectMaterialById = (id: number) => createSelector(
   selectMaterials,
   materials => materials.find(material => material.id == id)
 );
+
+export const selectMaterialCountById = (id: number) => createSelector(
+  selectMaterials,
+  materials => materials.find(material => material.id == id)?.count
+);

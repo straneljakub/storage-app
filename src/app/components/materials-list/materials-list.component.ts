@@ -14,6 +14,7 @@ import { Condition } from 'src/condition';
 import { selectMaterialById } from 'src/app/state/selectors/materials.selectors';
 import { select } from '@ngrx/store';
 import { selectConditions } from 'src/app/state/reducers/conditions.reducer';
+import { selectMaterialCountById } from 'src/app/state/selectors/materials.selectors';
 
 
 
