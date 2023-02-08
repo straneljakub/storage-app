@@ -15,6 +15,8 @@ import { selectMaterialById } from 'src/app/state/selectors/materials.selectors'
 import { select } from '@ngrx/store';
 import { selectConditions } from 'src/app/state/reducers/conditions.reducer';
 import { selectMaterialCountById } from 'src/app/state/selectors/materials.selectors';
+import { conditionFormData } from '../condition-dialog/condition-dialog.component'; 
+
 
 
 
@@ -92,23 +94,10 @@ export class MaterialsListComponent {
       data: {heading: 'Add Condition',}
     });
 
-    dialogRef.afterClosed().subscribe((result: Condition) => {
-      if(result) {
-        const item$ = this.store.select(selectMaterialById(id));
-        var material: Material = {id: 0, title: 'undefined', count: 0, description: 'undefined'};
-        item$.subscribe(value => material = value || {id: 0, title: 'undefined', count: 0, description: 'undefined'});
-        
-        const condition: Condition = {
-          id: 0,
-          operator: result.operator,
-          value: result.value,
-          entityId: {
-            id: material.id,
-            type: typeof material,
-          }
-        };
-        
-        this.store.dispatch(ConditionsActions.createCondition({condition}));
+    dialogRef.afterClosed().subscribe((data: conditionFormData) => {
+      if(data) {
+        const objType = 'material';
+        this.store.dispatch(ConditionsActions.createCondition({id, data, objType}));
       }
     });
   }  

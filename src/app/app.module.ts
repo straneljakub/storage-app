@@ -23,6 +23,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
 import { ConditionDialogComponent } from './components/condition-dialog/condition-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { conditionsFeature } from './state/reducers/conditions.reducer';
+import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.component';
 
 
 
@@ -34,6 +35,7 @@ import { conditionsFeature } from './state/reducers/conditions.reducer';
     InputDialogComponent,
     EditDialogComponent,
     ConditionDialogComponent,
+    AlertsDialogComponent,
   ],
   imports: [
     BrowserModule,

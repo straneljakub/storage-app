@@ -2,11 +2,11 @@ import {Component, Inject} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Material } from 'src/material';
 
-export interface DialogData {
+export interface ConditionDialogData {
   heading: string,
 }
 
-export interface formData {
+export interface conditionFormData {
   value: number,
   operator: string,
 }
@@ -17,7 +17,7 @@ export interface formData {
   styleUrls: ['./condition-dialog.component.css']
 })
 export class ConditionDialogComponent {
-  conditionForm: formData = {
+  conditionForm: conditionFormData = {
     value: 0,
     operator: '',
   }
@@ -29,10 +29,10 @@ export class ConditionDialogComponent {
   ]
   constructor(
     public dialogRef: MatDialogRef<ConditionDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,
+    @Inject(MAT_DIALOG_DATA) public data: ConditionDialogData,
   ) {}
 
-  submit(conditionForm: formData) {
+  submit(conditionForm: conditionFormData) {
     this.dialogRef.close(conditionForm);
   }
 }
