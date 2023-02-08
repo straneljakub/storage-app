@@ -1,9 +1,11 @@
 <h1 mat-dialog-title>{{data.title}}</h1>
 <div mat-dialog-content>
-  <mat-form-field appearance="fill">
-    <input matInput [(ngModel)]="data.count">
-  </mat-form-field>
-</div>
-<div mat-dialog-actions>
-  <button mat-button [mat-dialog-close]="data.count" cdkFocusInitial>Submit</button>
+  <form #form="ngForm" (ngSubmit)="submit(formData)">
+    <mat-form-field appearance="fill">
+      <input matInput type="number" [(ngModel)]="formData.count" required name="count" value="0">
+    </mat-form-field>
+    <div mat-dialog-actions>
+      <button color="primary" mat-raised-button type="submit" [disabled]="!form.valid">Ok</button>
+    </div>
+  </form>
 </div>

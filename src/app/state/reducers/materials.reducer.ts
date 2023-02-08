@@ -22,10 +22,14 @@ export const materialsFeature = createFeature({
             ...state,
             materials,
         })),
-        on(MaterialsActions.addMaterial, (state, { material }) => ({
-            ...state,
-            materials: [...state.materials, material],
-        })),
+        on(MaterialsActions.addMaterial, (state, { material }) => {
+            const newMaterial = {...material};
+            newMaterial.id = Math.max(...state.materials.map(item => item.id), 0) + 1;
+            return {
+                ...state,
+                materials: [...state.materials, newMaterial],
+            }
+        }),
         on(MaterialsActions.removeMaterial, (state, {materialId}) => ({
             ...state,
             materials: state.materials.filter(item => item.id != materialId),

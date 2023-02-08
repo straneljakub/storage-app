@@ -1,14 +1,16 @@
-
 <div class="container p-2 mx-auto sm:p-4 text-gray-800">
-	<h2 class="mb-4 text-2xl font-semibold leading-tight">Materials</h2>
+	<h2 class="mb-4 text-3xl font-semibold leading-tight">Materials</h2>
+	<button type="button" (click)="AddMaterial()"
+		class="px-4 py-2 mb-4 flex items-center justify-center rounded bg-blue-600 text-gray-50"><mat-icon
+			class="">add</mat-icon><span class="pl-1">Add Material</span></button>
 	<div class="overflow-x-auto">
-		<table class="p-6 text-xs text-left whitespace-nowrap">
+		<table class="p-6 text-xl text-left whitespace-nowrap">
 			<thead>
-				<tr class="bg-gray-300">
+				<tr class="bg-blue-400">
 					<th class="p-3">Title</th>
 					<th class="p-3">Count</th>
 					<th class="p-3">Description</th>
-                    <th></th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody *ngFor="let material of materials$ | async" class="border-b bg-gray-50 border-gray-300">
@@ -17,24 +19,30 @@
 						<p>{{ material.title }}</p>
 					</td>
 					<td class="px-3 py-2">
-						<p class="text-gray-600">{{ material.count }}</p>
+						<p>{{ material.count }}</p>
 					</td>
 					<td class="px-3 py-2">
 						<p>{{ material.description }}</p>
 					</td>
-                    <td>
-                        <button class="ml-2" type="button" (click)="AddCount(material.id)">
-                            +
-                        </button>
-                        <button class="ml-2" type="button" (click)="SubtractCount(material.id)">
-                            -
-                        </button>
-                        <button class="ml-2" type="button" (click)="Edit(material.id, material.title, material.count, material.description)">
-                            Edit
-                        </button>
-                    </td>
+					<td class="flex p-0 py-2">
+						<mat-icon class="ml-2 my-auto cursor-pointer text-blue-500 self-center"
+							(click)="AddCount(material.id)">add_circle_outline</mat-icon>
+						<mat-icon class="ml-2 cursor-pointer text-blue-500 self-center"
+							(click)="SubtractCount(material.id)">remove_circle_outline</mat-icon>
+						<mat-icon class="ml-2 pr-3 cursor-pointer text-blue-500 self-center"
+							(click)="Edit(material.id, material.title, material.count, material.description)">edit_circle</mat-icon>
+						<mat-icon class="ml-2 cursor-pointer text-blue-500 self-center" (click)="AddCondition(material.id)">notifications</mat-icon>
+					</td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
+</div>
+
+<div *ngFor="let condition of conditions$ | async">
+	<p>{{condition.id}}</p>
+	<p>{{condition.value}}</p>
+	<p>{{condition.operator}}</p>
+	<p>{{condition.entityId.id}}</p>
+	<p>{{condition.entityId.type}}</p>
 </div>

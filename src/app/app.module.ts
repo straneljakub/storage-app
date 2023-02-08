@@ -20,6 +20,9 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
+import { ConditionDialogComponent } from './components/condition-dialog/condition-dialog.component';
+import { MatSelectModule } from '@angular/material/select';
+import { conditionsFeature } from './state/reducers/conditions.reducer';
 
 
 
@@ -30,6 +33,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
     NavBarComponent,
     InputDialogComponent,
     EditDialogComponent,
+    ConditionDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +41,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
     HttpClientModule,
     TranslocoRootModule,
     StoreModule.forRoot({}),
-    [StoreModule.forFeature(materialsFeature), StoreModule.forFeature(notificationsFeature)],
+    [StoreModule.forFeature(materialsFeature), StoreModule.forFeature(notificationsFeature), StoreModule.forFeature(conditionsFeature)],
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
@@ -45,6 +49,7 @@ import { EditDialogComponent } from './components/edit-dialog/edit-dialog.compon
     MatInputModule,
     FormsModule,
     MatDialogModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

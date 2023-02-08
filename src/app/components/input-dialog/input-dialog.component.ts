@@ -6,19 +6,26 @@ export interface DialogData {
   count: number;
 }
 
+export interface DialogResult {
+  count: number;
+}
+
 @Component({
   selector: 'app-input-dialog',
   templateUrl: './input-dialog.component.html',
   styleUrls: ['./input-dialog.component.css']
 })
 export class InputDialogComponent {
+  formData: DialogResult = {
+    count: 0,
+  }
   constructor(
     public dialogRef: MatDialogRef<InputDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
   ) {}
 
-  onNoClick(): void {
-    this.dialogRef.close();
+  submit(formData: DialogResult) {
+    this.dialogRef.close(formData);
   }
 }
   

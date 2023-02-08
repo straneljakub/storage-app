@@ -1,16 +1,25 @@
 <h1 mat-dialog-title>{{data.heading}}</h1>
 <div mat-dialog-content>
-    <mat-form-field appearance="fill">
-        <input matInput [(ngModel)]="data.title" value="data.title">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <input matInput [(ngModel)]="data.count" value="data.count">
-    </mat-form-field>
-    <mat-form-field appearance="fill">
-        <input matInput [(ngModel)]="data.description" value="data.description">
-    </mat-form-field>
-
-</div>
-<div mat-dialog-actions>
-    <button mat-button [mat-dialog-close]="[data.title, data.count, data.description]" cdkFocusInitial>Submit</button>
+    <form #form="ngForm" (ngSubmit)="submit(formData)">
+        <mat-form-field style="display:none;">
+            <input matInput type="number" [(ngModel)]="formData.id" name="id" value="data.id">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="title">Title:</label>
+            <input matInput type="text" [(ngModel)]="formData.title" required name="title" placeholder="title">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="count">Count:</label>
+            <input matInput type="number" [(ngModel)]="formData.count" required name="count" placeholder="count">
+        </mat-form-field>
+        <mat-form-field>
+            <label for="description">Description:</label>
+            <input matInput type="text" [(ngModel)]="formData.description" required name="description"
+                placeholder="description">
+        </mat-form-field>
+        <div mat-dialog-actions>
+            <button mat-raised-button color="primary" type="submit"
+                [disabled]="!form.valid">OK</button>
+        </div>
+    </form>
 </div>
