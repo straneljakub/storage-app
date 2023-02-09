@@ -1,19 +1,33 @@
-<h1 mat-dialog-title>{{data.heading}}</h1>
 <div mat-dialog-content>
-  <form #form="ngForm" (ngSubmit)="submit(alertForm)">
-    <mat-form-field>
-      <input matInput placeholder="Value" type="number" name="value" required [(ngModel)]="alertForm.value">
-    </mat-form-field>
-
-    <mat-form-field>
-      <mat-select [(ngModel)]="alertForm.operator" name="operator" required>
-        <mat-option *ngFor="let operator of operators" [value]="operator.value">
-          {{operator.value}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-    <div mat-dialog-actions>
-      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">OK</button>
+  <h1 mat-dialog-title>{{data.title}} Alerts</h1>
+  <div class="container p-2 mx-auto sm:p-4 text-gray-800">
+    <button type="button" (click)="AddCondition(data.id)"
+      class="px-4 py-1 mb-4 text-xs flex items-center justify-center rounded bg-blue-600 text-gray-50"><mat-icon
+        class="text-s">add</mat-icon><span class="pl-1">Add Condition</span></button>
+    <div class="overflow-x-auto">
+      <table class="p-6 text-xs text-left whitespace-nowrap">
+        <thead>
+          <tr class="bg-blue-400">
+            <th class="p-3">Quantity</th>
+            <th class="p-3">Condition</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let condition of conditions$ | async" class="border-b bg-gray-50 border-gray-300">
+          <tr>
+            <td class="px-3 py-2">
+              <p>{{ condition.value }}</p>
+            </td>
+            <td class="px-3 py-2">
+              <p>{{ condition.operator }}</p>
+            </td>
+            <td class="flex p-0 py-2">
+              <mat-icon class="ml-2 my-auto cursor-pointer text-blue-500 self-center"
+                (click)="RemoveCondition(condition.id)">delete</mat-icon>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </form>
+  </div>
 </div>

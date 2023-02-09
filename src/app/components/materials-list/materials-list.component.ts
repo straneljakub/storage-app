@@ -8,19 +8,8 @@ import { InputDialogComponent } from '../input-dialog/input-dialog.component';
 import {MatDialog} from '@angular/material/dialog';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { DialogResult } from '../input-dialog/input-dialog.component';
-import { ConditionDialogComponent } from '../condition-dialog/condition-dialog.component';
-import { ConditionsActions } from 'src/app/state/actions/conditions.actions';
-import { Condition } from 'src/condition';
-import { selectMaterialById } from 'src/app/state/selectors/materials.selectors';
-import { select } from '@ngrx/store';
-import { selectConditions } from 'src/app/state/reducers/conditions.reducer';
-import { selectMaterialCountById } from 'src/app/state/selectors/materials.selectors';
-import { conditionFormData } from '../condition-dialog/condition-dialog.component'; 
-
-
-
-
-
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import { AlertsDialogComponent } from '../alerts-dialog/alerts-dialog.component';
 
 
 
@@ -37,7 +26,7 @@ export class MaterialsListComponent {
   ) {}
 
   materials$: Observable<Material[]> = this.store.select(selectMaterials);
-  conditions$: Observable<Condition[]> = this.store.select(selectConditions);
+  
 
   AddMaterial() {
     let dialogRef = this.matDialog.open(EditDialogComponent, {
@@ -88,17 +77,29 @@ export class MaterialsListComponent {
     });
   }
 
-  AddCondition(id: number) {
-    let dialogRef = this.matDialog.open(ConditionDialogComponent, {
+  OpenConditions(id: number, title: string) {
+    let dialogRef = this.matDialog.open(AlertsDialogComponent, {
       width: '350px',
-      data: {heading: 'Add Condition',}
+      data: {id: id, title: title, type: 'material'}
     });
 
-    dialogRef.afterClosed().subscribe((data: conditionFormData) => {
-      if(data) {
-        const objType = 'material';
-        this.store.dispatch(ConditionsActions.createCondition({id, data, objType}));
+    dialogRef.afterClosed().subscribe((material: Material) => {
+      if(material) {
+        this.store.dispatch(MaterialsActions.editMaterial({material}));
       }
     });
-  }  
+  }
+
+  DeleteMaterial(materialId: number, materialTitle: string) {
+    let dialogRef = this.matDialog.open(ConfirmDialogComponent, {
+      width: '350px',
+      data: {text: "Are you sure you want to delete " + materialTitle + " ?"},
+    });
+
+    dialogRef.afterClosed().subscribe((condition) => {
+      if(condition) {
+        this.store.dispatch(MaterialsActions.removeMaterial({materialId}));
+      }
+    });
+  }
 }

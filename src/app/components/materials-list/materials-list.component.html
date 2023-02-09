@@ -8,7 +8,7 @@
 			<thead>
 				<tr class="bg-blue-400">
 					<th class="p-3">Title</th>
-					<th class="p-3">Count</th>
+					<th class="p-3">Quantity</th>
 					<th class="p-3">Description</th>
 					<th></th>
 				</tr>
@@ -31,7 +31,9 @@
 							(click)="SubtractCount(material.id)">remove_circle_outline</mat-icon>
 						<mat-icon class="ml-2 pr-3 cursor-pointer text-blue-500 self-center"
 							(click)="Edit(material.id, material.title, material.count, material.description)">edit_circle</mat-icon>
-						<mat-icon class="ml-2 cursor-pointer text-blue-500 self-center" (click)="AddCondition(material.id)">notifications</mat-icon>
+							<mat-icon class="ml-2 cursor-pointer text-blue-500 self-center" (click)="DeleteMaterial(material.id, material.title)">delete</mat-icon>
+						<mat-icon class="ml-2 cursor-pointer text-blue-500 self-center" (click)="OpenConditions(material.id, material.title)">notifications</mat-icon>
+						
 					</td>
 				</tr>
 			</tbody>
@@ -39,10 +41,4 @@
 	</div>
 </div>
 
-<div *ngFor="let condition of conditions$ | async">
-	<p>{{condition.id}}</p>
-	<p>{{condition.value}}</p>
-	<p>{{condition.operator}}</p>
-	<p>{{condition.entityId.id}}</p>
-	<p>{{condition.entityId.type}}</p>
-</div>
+

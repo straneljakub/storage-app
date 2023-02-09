@@ -24,6 +24,7 @@ import { ConditionDialogComponent } from './components/condition-dialog/conditio
 import { MatSelectModule } from '@angular/material/select';
 import { conditionsFeature } from './state/reducers/conditions.reducer';
 import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
@@ -36,6 +37,7 @@ import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.
     EditDialogComponent,
     ConditionDialogComponent,
     AlertsDialogComponent,
+    ConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
