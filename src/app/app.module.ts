@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { conditionsFeature } from './state/reducers/conditions.reducer';
 import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -54,6 +55,7 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
     FormsModule,
     MatDialogModule,
     MatSelectModule,
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,10 +21,14 @@ export const notificationsFeature = createFeature({
             ...state,
             notifications,
         })),
-        on(NotificationsActions.createNotification, (state, {notification}) => ({
-            ...state,
-            notifications: [...state.notifications, notification],
-        })),
+        on(NotificationsActions.createNotification, (state, {notification}) => {
+            const newNotification = {...notification};
+            newNotification.id = Math.max(...state.notifications.map(item => item.id), 0) + 1;
+            return {
+                ...state,
+                notifications: [...state.notifications, newNotification],
+            }
+        }),
         on(NotificationsActions.deleteNotification, (state, {id}) => {
             const newArray = state.notifications.filter(item => item.id != id);
             return {

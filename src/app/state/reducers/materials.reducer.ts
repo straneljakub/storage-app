@@ -43,17 +43,6 @@ export const materialsFeature = createFeature({
                 materials: newArray,
             }
         }),
-        on(MaterialsActions.setCount, (state, {id, count}) => {
-            const index = state.materials.findIndex(item => item.id == id);
-            const newArray = [...state.materials]; 
-            const item = {...newArray[index]};
-            item.count = count;
-            newArray[index] = item;
-            return {
-                ...state,
-                materials: newArray,
-            }
-        }),
         on(MaterialsActions.addCount, (state, {id, count}) => {
             const index = state.materials.findIndex(item => item.id == id);
             const newArray = [...state.materials]; 

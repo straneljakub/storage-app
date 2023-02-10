@@ -7,9 +7,9 @@ export const MaterialsActions = createActionGroup({
         'Add Material': props<{material: Material}>(),
         'Remove Material': props<{materialId: number}>(),
         'Edit Material': props<{material: Material}>(),
-        'Set Count': props<{id: number, count: number}>(),
         'Add Count': props<{id: number, count: number}>(),
         'Subtract Count': props<{id: number, count: number}>(),
+        'Count Change': props<{id: number}>(),
     },
 });
 
@@ -17,5 +17,6 @@ export const MaterialsApiActions = createActionGroup({
     source: 'Materials API',
     events: {
         'Get Materials': props<{materials: Material[]}>(),
+        'Count Changes': props<{id: number[]}>(),
     },
 });
