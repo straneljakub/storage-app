@@ -43,7 +43,8 @@ export class AlertsDialogComponent {
     dialogRef.afterClosed().subscribe((data: conditionFormData) => {
       if(data) {
         const objType = 'material';
-        this.store.dispatch(ConditionsActions.createCondition({id, data, objType}));
+        const message = 'Count of ' + this.data.title + ' is ' + data.operator + ' ' + data.value;
+        this.store.dispatch(ConditionsActions.createCondition({id, data, objType, message}));
       }
     });
   }
