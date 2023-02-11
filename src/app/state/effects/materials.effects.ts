@@ -31,7 +31,7 @@ export class MaterialEffects {
             ofType(MaterialsApiActions.getMaterials),
             mergeMap((action) =>
                 action.materials.map(material =>
-                    ({ type: '[Materials Page] Count Change', payload: material.id })
+                    MaterialsActions.countChange({ id: material.id })
                 )
             )
         )

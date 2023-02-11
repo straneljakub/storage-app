@@ -39,7 +39,7 @@ export class ConditionEffects {
                 });
 
                 return metConditions.map(condition =>
-                    ({ type: '[Materials Page] Condition Met', payload: condition }));
+                    ConditionsActions.conditionMet({ condition }));
             }
             )));
 
@@ -53,16 +53,16 @@ export class ConditionEffects {
                     message: action.condition.message,
                     date: '',
                 }
-                return ({ type: '[Notifications Centre] Create Notification', payload: newNotification })
+                return NotificationsActions.createNotification({ notification: newNotification })
             }
             )
         ));
-    
-    $deleteCondition = createEffect(() => 
+
+    $deleteCondition = createEffect(() =>
         this.actions$.pipe(
             ofType(ConditionsActions.conditionMet),
             map((action) => {
-                return ({type: '[Materials Page] Delete Condition', payload: action.condition.id});
+                return ConditionsActions.deleteCondition({id: action.condition.id});
             })
         ))
 
