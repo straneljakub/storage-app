@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { NotificationsDialogComponent } from '../notifications-dialog/notifications-dialog.component';
 
 @Component({
   selector: 'app-nav-bar',
@@ -6,5 +8,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent {
+  OpenNotificationDialog() {
+    this.matDialog.open(NotificationsDialogComponent, {
+      width: '500px',
+    });
+  }
 
+  constructor (
+    private matDialog: MatDialog,
+  ) {}
 }

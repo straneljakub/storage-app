@@ -5,4 +5,5 @@ export interface Notification {
         type: any;
     };
     message: string;
+    date: string;
 }

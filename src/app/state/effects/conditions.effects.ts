@@ -51,6 +51,7 @@ export class ConditionEffects {
                     id: -1,
                     entityId: action.condition.entityId,
                     message: action.condition.message,
+                    date: '',
                 }
                 return ({ type: '[Notifications Centre] Create Notification', payload: newNotification })
             }

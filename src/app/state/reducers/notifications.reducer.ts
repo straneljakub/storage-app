@@ -4,7 +4,6 @@ import { Notification } from 'src/notification';
 import { NotificationsActions } from '../actions/notifications.actions';
 import { NotificationsApiActions } from '../actions/notifications.actions';
 
-
 export interface NotificationsState {
     notifications: Notification[],
 }
@@ -24,6 +23,8 @@ export const notificationsFeature = createFeature({
         on(NotificationsActions.createNotification, (state, {notification}) => {
             const newNotification = {...notification};
             newNotification.id = Math.max(...state.notifications.map(item => item.id), 0) + 1;
+            const date = new Date();
+            newNotification.date = date.getDate + ' ' + date.getTime ;
             return {
                 ...state,
                 notifications: [...state.notifications, newNotification],

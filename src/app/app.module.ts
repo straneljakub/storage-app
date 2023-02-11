@@ -26,6 +26,10 @@ import { conditionsFeature } from './state/reducers/conditions.reducer';
 import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { EffectsModule } from '@ngrx/effects';
+import { NotificationsDialogComponent } from './components/notifications-dialog/notifications-dialog.component';
+import { MaterialEffects } from './state/effects/materials.effects';
+import { ConditionEffects } from './state/effects/conditions.effects';
+
 
 
 
@@ -39,6 +43,7 @@ import { EffectsModule } from '@ngrx/effects';
     ConditionDialogComponent,
     AlertsDialogComponent,
     ConfirmDialogComponent,
+    NotificationsDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,7 +60,7 @@ import { EffectsModule } from '@ngrx/effects';
     FormsModule,
     MatDialogModule,
     MatSelectModule,
-    EffectsModule.forRoot([]),
+    EffectsModule.forRoot([MaterialEffects, ConditionEffects]),
   ],
   providers: [],
   bootstrap: [AppComponent]

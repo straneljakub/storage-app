@@ -78,15 +78,9 @@ export class MaterialsListComponent {
   }
 
   OpenConditions(id: number, title: string) {
-    let dialogRef = this.matDialog.open(AlertsDialogComponent, {
+    this.matDialog.open(AlertsDialogComponent, {
       width: '350px',
       data: {id: id, title: title, type: 'material'}
-    });
-
-    dialogRef.afterClosed().subscribe((material: Material) => {
-      if(material) {
-        this.store.dispatch(MaterialsActions.editMaterial({material}));
-      }
     });
   }
 
