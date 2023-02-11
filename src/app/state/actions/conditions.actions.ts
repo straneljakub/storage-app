@@ -8,6 +8,7 @@ export const ConditionsActions = createActionGroup({
     events: {
         'Create Condition': props<{id: number, data: conditionFormData, objType: any, message: string}>(),
         'Delete Condition': props<{id: number}>(),
+        'Condition Met': props<{condition: Condition}>(),
     },
 })
 
