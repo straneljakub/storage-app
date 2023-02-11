@@ -10,7 +10,6 @@ import { NotificationsDialogComponent } from '../notifications-dialog/notificati
 export class NavBarComponent {
   OpenNotificationDialog() {
     this.matDialog.open(NotificationsDialogComponent, {
-      width: '500px',
     });
   }
 

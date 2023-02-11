@@ -1,16 +1,17 @@
 <h2 mat-dialog-title>Notifications</h2>
 <div mat-dialog-content>
     <div *ngFor="let notification of notifications$ | async">
-        <div>
+        <div class="flex gap-x-4 border-b-2 mb-2">
             <div>
-                <h3>{{notification.message}}</h3>
-                <span>{{notification.date}}</span>
+                <h3 class="font-bold">{{notification.message}}</h3>
+                <span class="italic">{{notification.date}}</span>
             </div>
-            <mat-icon class="ml-2 my-auto cursor-pointer text-blue-500 self-center" (click)="DeleteNotification(notification.id)">
-             delete</mat-icon>
+            <mat-icon class="ml-2 my-auto cursor-pointer text-blue-500 self-center"
+                (click)="DeleteNotification(notification.id)">
+                delete</mat-icon>
         </div>
     </div>
     <div mat-dialog-actions>
         <button color="warn" mat-raised-button (click)="Close()">Close</button>
-      </div>
+    </div>
 </div>
