@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>{{data.heading}}</h1>
 <div mat-dialog-content>
-    <form #form="ngForm" (ngSubmit)="submit(formData)">
+    <form class="grid" #form="ngForm" (ngSubmit)="submit(formData)">
         <mat-form-field style="display:none;">
             <input matInput type="number" [(ngModel)]="formData.id" name="id" value="data.id">
         </mat-form-field>

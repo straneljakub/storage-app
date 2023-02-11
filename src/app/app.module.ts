@@ -29,6 +29,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { NotificationsDialogComponent } from './components/notifications-dialog/notifications-dialog.component';
 import { MaterialEffects } from './state/effects/materials.effects';
 import { ConditionEffects } from './state/effects/conditions.effects';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -60,6 +61,7 @@ import { ConditionEffects } from './state/effects/conditions.effects';
     FormsModule,
     MatDialogModule,
     MatSelectModule,
+    MatBadgeModule,
     EffectsModule.forRoot([MaterialEffects, ConditionEffects]),
   ],
   providers: [],

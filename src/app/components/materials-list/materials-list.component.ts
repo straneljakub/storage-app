@@ -30,7 +30,6 @@ export class MaterialsListComponent {
 
   AddMaterial() {
     let dialogRef = this.matDialog.open(EditDialogComponent, {
-      width: '350px',
       data: {heading: 'Add Material'}
     });
     dialogRef.afterClosed().subscribe((material: Material) => {
@@ -42,7 +41,6 @@ export class MaterialsListComponent {
 
   AddCount(id: number) {
     let dialogRef = this.matDialog.open(InputDialogComponent, {
-      width: '350px',
       data: {title: 'Add Count'}
     });
 
@@ -54,7 +52,6 @@ export class MaterialsListComponent {
 
   SubtractCount(id: number) {
     let dialogRef = this.matDialog.open(InputDialogComponent, {
-      width: '350px',
       data: {title: 'Subtract Count'}
     });
 
@@ -66,7 +63,6 @@ export class MaterialsListComponent {
 
   Edit(id: number, title: string, count: number, description: string) {
     let dialogRef = this.matDialog.open(EditDialogComponent, {
-      width: '350px',
       data: {heading: 'Edit Material', id: id, title: title, count: count, description: description}
     });
 
@@ -79,14 +75,13 @@ export class MaterialsListComponent {
 
   OpenConditions(id: number, title: string) {
     this.matDialog.open(AlertsDialogComponent, {
-      width: '350px',
+      maxHeight: '400px',
       data: {id: id, title: title, type: 'material'}
     });
   }
 
   DeleteMaterial(materialId: number, materialTitle: string) {
     let dialogRef = this.matDialog.open(ConfirmDialogComponent, {
-      width: '350px',
       data: {text: "Are you sure you want to delete " + materialTitle + " ?"},
     });
 
