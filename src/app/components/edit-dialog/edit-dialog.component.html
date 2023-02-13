@@ -5,21 +5,21 @@
             <input matInput type="number" [(ngModel)]="formData.id" name="id" value="data.id">
         </mat-form-field>
         <mat-form-field>
-            <label for="title">Title:</label>
+            <label for="title">{{"editDialog.title" | transloco}}:</label>
             <input matInput type="text" [(ngModel)]="formData.title" required name="title" placeholder="title">
         </mat-form-field>
         <mat-form-field>
-            <label for="count">Count:</label>
+            <label for="count">{{"editDialog.count" | transloco}}:</label>
             <input matInput type="number" [(ngModel)]="formData.count" required name="count" placeholder="count">
         </mat-form-field>
         <mat-form-field>
-            <label for="description">Description:</label>
+            <label for="description">{{"editDialog.description" | transloco}}:</label>
             <input matInput type="text" [(ngModel)]="formData.description" required name="description"
                 placeholder="description">
         </mat-form-field>
         <div mat-dialog-actions>
             <button mat-raised-button color="primary" type="submit"
-                [disabled]="!form.valid">Submit</button>
+                [disabled]="!form.valid">{{"submitButton" | transloco}}</button>
         </div>
     </form>
 </div>

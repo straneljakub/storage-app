@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Notifications</h2>
+<h2 mat-dialog-title>{{'notifications.title' | transloco}}</h2>
 <div mat-dialog-content>
     <div *ngFor="let notification of notifications$ | async">
         <div class="flex gap-x-4 border-b-2 mb-2">
@@ -12,6 +12,6 @@
         </div>
     </div>
     <div mat-dialog-actions>
-        <button color="warn" mat-raised-button (click)="Close()">Close</button>
+        <button color="warn" mat-raised-button (click)="Close()">{{'notifications.closeButton' | transloco}}</button>
     </div>
 </div>

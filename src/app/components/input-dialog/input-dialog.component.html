@@ -5,7 +5,7 @@
       <input matInput type="number" [(ngModel)]="formData.count" required name="count" value="0">
     </mat-form-field>
     <div mat-dialog-actions>
-      <button color="primary" mat-raised-button type="submit" [disabled]="!form.valid">Submit</button>
+      <button color="primary" mat-raised-button type="submit" [disabled]="!form.valid">{{"submitButton" | transloco}}</button>
     </div>
   </form>
 </div>

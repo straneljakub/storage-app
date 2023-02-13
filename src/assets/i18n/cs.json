@@ -1,1 +1,57 @@
-{}
+{
+    "submitButton": "Potvrdit",
+
+    "navBar": {
+        "links": {
+            "one": "Materiály"
+        },
+        "logIn": "Přihlásit se"
+    },
+
+    "materials": {
+        "pageTitle": "Materiály",
+        "addMaterial": "Přidat Materiál",
+        "table": {
+            "headingOne": "Název",
+            "headingTwo": "Počet",
+            "headingThree": "Popis"
+        }
+    },
+
+    "notifications": {
+        "title": "Notifikace",
+        "closeButton": "Zavřít"
+    },
+
+    "editDialog": {
+        "addHeading": "Přidat Materiál",
+        "editHeading": "Upravit Materiál",
+        "title": "Název",
+        "count": "Počet",
+        "description": "Popis"
+    },
+
+    "conditionDialog": {
+        "heading": "Přidat Podmínku"
+    },
+
+    "alertsDialog": {
+        "heading": "Podmínky",
+        "addButton": "Přidat podmínku",
+        "table": {
+            "headingOne": "Počet",
+            "headingTwo": "Podmínka"
+        }
+    },
+
+    "confirmDialog": {
+        "text": "Jste si jistý, že chcete smazat ",
+        "submitButton": "Ano",
+        "closeButton": "Zrušit"
+    },
+
+    "inputDialog": {
+        "addHeading": "Přidat počet",
+        "subtractHeading": "Odebrat počet"
+    }
+}

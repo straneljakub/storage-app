@@ -1,1 +1,57 @@
-{}
+{
+    "submitButton": "Submit",
+
+    "navBar": {
+        "links": {
+            "one": "Materials"
+        },
+        "logIn": "Log in"
+    },
+
+    "materials": {
+        "pageTitle": "Materials",
+        "addMaterial": "Add Material",
+        "table": {
+            "headingOne": "Title",
+            "headingTwo": "Quantity",
+            "headingThree": "Description"
+        }
+    },
+
+    "notifications": {
+        "title": "Notifications",
+        "closeButton": "Close"
+    },
+
+    "editDialog": {
+        "addHeading": "Add Material",
+        "editHeading": "Edit Material",
+        "title": "Title",
+        "count": "Count",
+        "description": "Description"
+    },
+
+    "conditionDialog": {
+        "heading": "Add Alert"
+    },
+
+    "alertsDialog": {
+        "heading": "Alerts",
+        "addButton": "Add Alert",
+        "table": {
+            "headingOne": "Quantity",
+            "headingTwo": "Condition"
+        }
+    },
+
+    "confirmDialog": {
+        "text": "Are you sure you want to delete ",
+        "submitButton": "Yes",
+        "closeButton": "Cancel"
+    },
+
+    "inputDialog": {
+        "addHeading": "Add Quantity",
+        "subtractHeading": "Subtract Quantity"
+    }
+}

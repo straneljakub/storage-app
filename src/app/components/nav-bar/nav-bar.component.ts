@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslocoService } from '@ngneat/transloco';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectNotifications } from 'src/app/state/reducers/notifications.reducer';
 import { Notification } from 'src/notification';
 import { NotificationsDialogComponent } from '../notifications-dialog/notifications-dialog.component';
+
 
 
 @Component({
@@ -24,5 +26,10 @@ export class NavBarComponent {
   constructor (
     private matDialog: MatDialog,
     private store: Store,
+    private translocoService: TranslocoService,
   ) {}
+
+  changeLanguage(lang: string) {
+    this.translocoService.setActiveLang(lang);
+  }
 }

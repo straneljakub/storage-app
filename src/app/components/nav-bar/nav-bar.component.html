@@ -15,8 +15,7 @@
 			<ul class="items-stretch hidden space-x-3 lg:flex">
 				<li class="flex">
 					<a rel="noopener noreferrer" href="#"
-						class="ml-4 flex items-center px-4 -mb-1 border-b-2 border-transparent text-blue-600 border-blue-600">Materials
-						Page</a>
+						class="ml-4 flex items-center px-4 -mb-1 border-b-2 border-transparent text-blue-600 border-blue-600">{{'navBar.links.one' | transloco}}</a>
 				</li>
 			</ul>
 		</div>
@@ -34,7 +33,9 @@
 					</div>
 				</ng-template>
 			</ng-container>
-			<button class="ml-6 px-8 py-3 rounded bg-blue-600 text-gray-50">Log in</button>
+			<button class="ml-6 px-8 py-3 rounded bg-blue-600 text-gray-50">{{'navBar.logIn' | transloco}}</button>
+			<span class="fi fi-gb ml-4 cursor-pointer" (click)="changeLanguage('en')"></span> 
+			<span class="fi fi-cz ml-2 cursor-pointer" (click)="changeLanguage('cs')"></span> 
 		</div>
 		<button class="p-4 lg:hidden">
 			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"

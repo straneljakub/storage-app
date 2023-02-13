@@ -1,15 +1,15 @@
 <div class="container p-2 mx-auto sm:p-4 text-gray-800">
-	<h2 class="mb-4 text-3xl font-semibold leading-tight">Materials</h2>
+	<h2 class="mb-4 text-3xl font-semibold leading-tight">{{'materials.pageTitle' | transloco}}</h2>
 	<button type="button" (click)="AddMaterial()"
 		class="px-4 py-2 mb-4 flex items-center justify-center rounded bg-blue-600 text-gray-50"><mat-icon
-			class="">add</mat-icon><span class="pl-1">Add Material</span></button>
+			class="">add</mat-icon><span class="pl-1">{{'materials.addMaterial' | transloco}}</span></button>
 	<div class="overflow-x-auto">
 		<table class="p-6 text-xl text-left whitespace-nowrap">
 			<thead>
 				<tr class="bg-blue-400">
-					<th class="p-3">Title</th>
-					<th class="p-3">Quantity</th>
-					<th class="p-3">Description</th>
+					<th class="p-3">{{'materials.table.headingOne' | transloco}}</th>
+					<th class="p-3">{{'materials.table.headingTwo' | transloco}}</th>
+					<th class="p-3">{{'materials.table.headingThree' | transloco}}</th>
 					<th></th>
 				</tr>
 			</thead>

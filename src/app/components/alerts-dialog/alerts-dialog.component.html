@@ -1,15 +1,15 @@
 <div mat-dialog-content>
-  <h1 mat-dialog-title>{{data.title}} Alerts</h1>
+  <h1 mat-dialog-title>{{data.title}} {{"alertsDialog.heading" | transloco}}</h1>
   <div class="container p-2 mx-auto sm:p-4 text-gray-800">
     <button type="button" (click)="AddCondition(data.id)"
       class="px-4 py-1 mb-4 text-xs flex items-center justify-center rounded bg-blue-600 text-gray-50"><mat-icon
-        class="text-s">add</mat-icon><span class="pl-1">Add Alert</span></button>
+        class="text-s">add</mat-icon><span class="pl-1">{{"alertsDialog.addButton" | transloco}}</span></button>
     <div class="overflow-x-auto">
       <table class="p-6 text-xs text-left whitespace-nowrap">
         <thead>
           <tr class="bg-blue-400">
-            <th class="p-3">Quantity</th>
-            <th class="p-3">Condition</th>
+            <th class="p-3">{{"alertsDialog.table.headingOne" | transloco}}</th>
+            <th class="p-3">{{"alertsDialog.table.headingTwo" | transloco}}</th>
             <th></th>
           </tr>
         </thead>
