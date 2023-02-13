@@ -41,6 +41,10 @@
         "table": {
             "headingOne": "Počet",
             "headingTwo": "Podmínka"
+        },
+        "builder": {
+            "one": "Počet ",
+            "two": " je "        
         }
     },
 

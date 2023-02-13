@@ -7,6 +7,7 @@ import { Condition } from 'src/condition';
 import { ConditionsActions } from 'src/app/state/actions/conditions.actions';
 import { ConditionDialogComponent } from '../condition-dialog/condition-dialog.component';
 import { conditionFormData } from '../condition-dialog/condition-dialog.component';
+import { TranslocoService } from '@ngneat/transloco';
 
 export interface AlertDialogData {
   title: string,
@@ -26,6 +27,7 @@ export class AlertsDialogComponent {
     @Inject(MAT_DIALOG_DATA) public data: AlertDialogData,
     private store: Store,
     private matDialog: MatDialog,
+    private translocoService: TranslocoService,
   ) { }
 
   conditions$: Observable<Condition[]> = this.store.select(selectConditionsByEntityId(this.data.id, this.data.type));
@@ -36,14 +38,13 @@ export class AlertsDialogComponent {
 
   AddCondition(id: number) {
     let dialogRef = this.matDialog.open(ConditionDialogComponent, {
-      width: '350px',
-      data: {heading: 'Add Condition',}
     });
 
     dialogRef.afterClosed().subscribe((data: conditionFormData) => {
       if(data) {
         const objType = 'material';
-        const message = 'Count of ' + this.data.title + ' is ' + data.operator + ' ' + data.value;
+        const message = this.translocoService.translate("alertsDialog.builder.one") + 
+        this.data.title + this.translocoService.translate("alertsDialog.builder.two") + data.operator + ' ' + data.value;
         this.store.dispatch(ConditionsActions.createCondition({id, data, objType, message}));
       }
     });

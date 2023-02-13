@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>{{"conditionDialog.heading" | transloco}}</h1>
 <div mat-dialog-content>
-  <form #form="ngForm" (ngSubmit)="submit(conditionForm)">
+  <form #form="ngForm" class="grid" (ngSubmit)="submit(conditionForm)">
     <mat-form-field>
       <input matInput placeholder="Value" type="number" name="value" required [(ngModel)]="conditionForm.value">
     </mat-form-field>
