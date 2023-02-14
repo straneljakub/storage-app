@@ -4,6 +4,7 @@ export interface Notification {
         id: number;
         type: any;
     };
-    message: string;
+    value: number;
+    operator: string;
     date: string;
 }

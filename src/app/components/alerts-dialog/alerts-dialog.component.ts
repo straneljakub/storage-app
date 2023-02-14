@@ -43,9 +43,7 @@ export class AlertsDialogComponent {
     dialogRef.afterClosed().subscribe((data: conditionFormData) => {
       if(data) {
         const objType = 'material';
-        const message = this.translocoService.translate("alertsDialog.builder.one") + 
-        this.data.title + this.translocoService.translate("alertsDialog.builder.two") + data.operator + ' ' + data.value;
-        this.store.dispatch(ConditionsActions.createCondition({id, data, objType, message}));
+        this.store.dispatch(ConditionsActions.createCondition({id, data, objType}));
       }
     });
   }

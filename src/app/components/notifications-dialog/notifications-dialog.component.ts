@@ -6,6 +6,7 @@ import { Observable } from 'rxjs'
 import { Notification } from 'src/notification';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { NotificationsActions } from 'src/app/state/actions/notifications.actions';
+import { selectMaterialTitleById } from 'src/app/state/selectors/materials.selectors';
 
 @Component({
   selector: 'app-notifications-dialog',
@@ -27,4 +28,12 @@ export class NotificationsDialogComponent {
     private store: Store,
     public dialogRef: MatDialogRef<NotificationsDialogComponent>,
   ) {}
+
+  GetMaterialTitle(id: number) {
+    var title: string = '';
+    this.store.select(selectMaterialTitleById(id))
+      .subscribe(value => title = value || '');
+    return title;
+  }
+  
 }

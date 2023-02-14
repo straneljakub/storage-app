@@ -6,5 +6,4 @@ export interface Condition  {
         id: number;
         type: any;
     };
-    message: string;
 }

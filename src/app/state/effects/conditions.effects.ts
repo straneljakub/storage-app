@@ -50,7 +50,8 @@ export class ConditionEffects {
                 const newNotification: Notification = {
                     id: -1,
                     entityId: action.condition.entityId,
-                    message: action.condition.message,
+                    value: action.condition.value,
+                    operator: action.condition.operator,
                     date: '',
                 }
                 return NotificationsActions.createNotification({ notification: newNotification })

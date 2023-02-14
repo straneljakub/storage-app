@@ -37,6 +37,8 @@ export class MaterialEffects {
         )
     );
 
+    //TODO ulozeni dat do API
+
     constructor(
         private actions$: Actions,
     ) { }

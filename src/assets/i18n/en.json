@@ -20,7 +20,8 @@
 
     "notifications": {
         "title": "Notifications",
-        "closeButton": "Close"
+        "closeButton": "Close",
+        "message": "Count of {{materialTitle}} is {{operator}} {{value}}"
     },
 
     "editDialog": {
@@ -41,10 +42,6 @@
         "table": {
             "headingOne": "Quantity",
             "headingTwo": "Condition"
-        },
-        "builder": {
-            "one": "Count of ",
-            "two": " is "        
         }
     },
 

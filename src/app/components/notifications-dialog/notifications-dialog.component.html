@@ -1,9 +1,10 @@
 <h2 mat-dialog-title>{{'notifications.title' | transloco}}</h2>
-<div mat-dialog-content>
+<div mat-dialog-content *transloco='let t'>
     <div *ngFor="let notification of notifications$ | async">
         <div class="flex gap-x-4 border-b-2 mb-2">
             <div>
-                <h3 class="font-bold">{{notification.message}}</h3>
+                <h3 class="font-bold">{{t("notifications.message", {materialTitle: GetMaterialTitle(notification.entityId.id),
+                                        operator: notification.operator, value: notification.value})}}</h3>
                 <span class="italic">{{notification.date}}</span>
             </div>
             <mat-icon class="ml-2 my-auto cursor-pointer text-blue-500 self-center"

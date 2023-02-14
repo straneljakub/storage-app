@@ -20,7 +20,8 @@
 
     "notifications": {
         "title": "Notifikace",
-        "closeButton": "Zavřít"
+        "closeButton": "Zavřít",
+        "message": "Počet {{materialTitle}} je {{operator}} {{value}}"
     },
 
     "editDialog": {
@@ -41,10 +42,6 @@
         "table": {
             "headingOne": "Počet",
             "headingTwo": "Podmínka"
-        },
-        "builder": {
-            "one": "Počet ",
-            "two": " je "        
         }
     },
 

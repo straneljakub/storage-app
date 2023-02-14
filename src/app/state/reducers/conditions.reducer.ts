@@ -26,13 +26,12 @@ export const conditionsFeature = createFeature({
             ...state,
             conditions,
         })),
-        on(ConditionsActions.createCondition, (state, {id, data, objType, message}) => {
+        on(ConditionsActions.createCondition, (state, {id, data, objType}) => {
             const newId = Math.max(...state.conditions.map(item => item.id), 0) + 1;
             const newCondition: Condition = {
                 id: newId,
                 operator: data.operator,
                 value: data.value,
-                message: message,
                 entityId: {
                     id: id,
                     type: objType,

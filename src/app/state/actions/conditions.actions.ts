@@ -6,7 +6,7 @@ import { conditionFormData } from 'src/app/components/condition-dialog/condition
 export const ConditionsActions = createActionGroup({
     source: 'Materials Page',
     events: {
-        'Create Condition': props<{id: number, data: conditionFormData, objType: any, message: string}>(),
+        'Create Condition': props<{id: number, data: conditionFormData, objType: any}>(),
         'Delete Condition': props<{id: number}>(),
         'Condition Met': props<{condition: Condition}>(),
     },
