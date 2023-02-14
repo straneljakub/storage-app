@@ -9,9 +9,7 @@ export interface NotificationsState {
 }
 
 const initialState: NotificationsState = {
-    notifications: [{ id: 0, value: 25, operator: '>', entityId: { id: 0, type: 'material' }, date: '11. 2. 2023 12:16', },
-    { id: 2, value: 25, operator: '>', entityId: { id: 0, type: 'material' }, date: '11. 2. 2023 12:16', },
-    { id: 3, value: 25, operator: '>', entityId: { id: 0, type: 'material' }, date: '11. 2. 2023 12:16', }],
+    notifications: [],
 }
 
 export const notificationsFeature = createFeature({
