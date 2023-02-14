@@ -59,14 +59,6 @@ export class ConditionEffects {
             )
         ));
 
-    $deleteCondition = createEffect(() =>
-        this.actions$.pipe(
-            ofType(ConditionsActions.conditionMet),
-            map((action) => {
-                return ConditionsActions.deleteCondition({id: action.condition.id});
-            })
-        ))
-
     constructor(
         private actions$: Actions,
         private store: Store,

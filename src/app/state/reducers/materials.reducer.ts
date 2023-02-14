@@ -60,10 +60,17 @@ export const materialsFeature = createFeature({
             const item = {...newArray[index]};
             item.count -= count;
             newArray[index] = item;
-            return {
-                ...state,
-                materials: newArray,
+            if(item.count >= 0) {
+                return {
+                    ...state,
+                    materials: newArray,
+                }
+            } else {
+                return {
+                    ...state,
+                }
             }
+            
         }),
     )
 });

@@ -10,7 +10,7 @@
         </mat-form-field>
         <mat-form-field>
             <label for="count">{{"editDialog.count" | transloco}}:</label>
-            <input matInput type="number" [(ngModel)]="formData.count" required name="count" placeholder="count">
+            <input matInput type="number" [(ngModel)]="formData.count" min="0" required name="count" placeholder="count">
         </mat-form-field>
         <mat-form-field>
             <label for="description">{{"editDialog.description" | transloco}}:</label>
