@@ -30,6 +30,7 @@ import { NotificationsDialogComponent } from './components/notifications-dialog/
 import { MaterialEffects } from './state/effects/materials.effects';
 import { ConditionEffects } from './state/effects/conditions.effects';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MaterialDetailComponent } from './components/material-detail/material-detail.component';
 
 
 
@@ -47,6 +48,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     AlertsDialogComponent,
     ConfirmDialogComponent,
     NotificationsDialogComponent,
+    MaterialDetailComponent,
   ],
   imports: [
     BrowserModule,

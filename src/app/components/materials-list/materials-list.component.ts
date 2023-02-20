@@ -11,6 +11,7 @@ import { DialogResult } from '../input-dialog/input-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
 import { AlertsDialogComponent } from '../alerts-dialog/alerts-dialog.component';
 import { TranslocoService } from '@ngneat/transloco';
+import { Router } from '@angular/router';
 
 
 
@@ -26,6 +27,7 @@ export class MaterialsListComponent {
     private store: Store,
     private matDialog: MatDialog,
     private translocoService: TranslocoService,
+    private router: Router,
   ) { }
 
   materials$: Observable<Material[]> = this.store.select(selectMaterials);
@@ -96,5 +98,9 @@ export class MaterialsListComponent {
         this.store.dispatch(MaterialsActions.removeMaterial({ materialId }));
       }
     });
+  }
+
+  MaterialDetail(id: number) {
+    this.router.navigate(['/material-detail-component', {id: id}]);
   }
 }
