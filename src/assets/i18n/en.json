@@ -54,5 +54,10 @@
     "inputDialog": {
         "addHeading": "Add Quantity",
         "subtractHeading": "Subtract Quantity"
+    },
+
+    "form": {
+        "empty": "Field cannot be empty",
+        "negative": "Value cannot be negative"
     }
 }

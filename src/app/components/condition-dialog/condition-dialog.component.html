@@ -1,19 +1,28 @@
 <h1 mat-dialog-title>{{"conditionDialog.heading" | transloco}}</h1>
 <div mat-dialog-content>
-  <form #form="ngForm" class="grid" (ngSubmit)="submit(conditionForm)">
+  <form #form="ngForm" class="grid" (ngSubmit)="submit(conditionForm)" [formGroup]="conditionF">
+
+    <div *ngIf="conditionF.controls.value.errors && conditionF.controls.value.touched">
+      <p class="text-red-500" *ngIf="conditionF.controls.value.errors['required']">{{"form.empty" | transloco}}</p>
+      <p class="text-red-500" *ngIf="conditionF.controls.value.errors['min']">{{"form.negative" | transloco}}</p>
+    </div>
     <mat-form-field>
-      <input matInput placeholder="Value" min="0" type="number" name="value" required [(ngModel)]="conditionForm.value">
+      <input matInput type="number" name="value" [(ngModel)]="conditionForm.value" formControlName="value">
     </mat-form-field>
 
+    <div *ngIf="conditionF.controls.operator.errors && conditionF.controls.operator.touched">
+      <p class="text-red-500" *ngIf="conditionF.controls.operator.errors['required']">{{"form.empty" | transloco}}</p>
+    </div>
     <mat-form-field>
-      <mat-select [(ngModel)]="conditionForm.operator" name="operator" required>
+      <mat-select [(ngModel)]="conditionForm.operator" name="operator" formControlName="operator">
         <mat-option *ngFor="let operator of operators" [value]="operator.value">
           {{operator.value}}
         </mat-option>
       </mat-select>
     </mat-form-field>
     <div mat-dialog-actions>
-      <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">{{"submitButton" | transloco}}</button>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!conditionF.valid">{{"submitButton" |
+        transloco}}</button>
     </div>
   </form>
 </div>

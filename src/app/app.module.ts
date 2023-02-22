@@ -31,6 +31,7 @@ import { MaterialEffects } from './state/effects/materials.effects';
 import { ConditionEffects } from './state/effects/conditions.effects';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MaterialDetailComponent } from './components/material-detail/material-detail.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -67,6 +68,7 @@ import { MaterialDetailComponent } from './components/material-detail/material-d
     MatSelectModule,
     MatBadgeModule,
     EffectsModule.forRoot([MaterialEffects, ConditionEffects]),
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

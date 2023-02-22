@@ -1,6 +1,7 @@
-import {Component, Inject} from '@angular/core';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { Component, Inject } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Material } from 'src/material';
+import { FormControl, FormGroup, Validators, FormBuilder} from '@angular/forms';
 
 export interface DialogData {
   heading: string,
@@ -25,7 +26,17 @@ export class EditDialogComponent {
   constructor(
     public dialogRef: MatDialogRef<EditDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-  ) {}
+    private fb: FormBuilder,
+  ) { }
+
+
+
+  editForm = this.fb.group({
+    title: ['', Validators.required],
+    count: ['', [Validators.required, Validators.min(0)]],
+    description: ['', Validators.required],
+  })
+
 
   submit(formData: Material) {
     this.dialogRef.close(formData);

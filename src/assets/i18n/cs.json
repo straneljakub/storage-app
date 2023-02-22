@@ -54,5 +54,10 @@
     "inputDialog": {
         "addHeading": "Přidat počet",
         "subtractHeading": "Odebrat počet"
+    },
+
+    "form": {
+        "empty": "Pole nesmí být prázdné",
+        "negative": "Hodnota nesmí být záporná"
     }
 }
