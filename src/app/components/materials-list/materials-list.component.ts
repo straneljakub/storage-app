@@ -9,7 +9,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { DialogResult } from '../input-dialog/input-dialog.component';
 import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
-import { AlertsDialogComponent } from '../alerts-dialog/alerts-dialog.component';
+import { AlertsDialogComponent } from '../../../features/conditions/components/alerts-dialog/alerts-dialog.component';
 import { TranslocoService } from '@ngneat/transloco';
 import { Router } from '@angular/router';
 

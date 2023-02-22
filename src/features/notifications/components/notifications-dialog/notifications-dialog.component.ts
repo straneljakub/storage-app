@@ -11,7 +11,7 @@ import { selectMaterialTitleById } from 'src/app/state/selectors/materials.selec
 @Component({
   selector: 'app-notifications-dialog',
   templateUrl: './notifications-dialog.component.html',
-  styleUrls: ['./notifications-dialog.component.css']
+  styleUrls: ['../../../../app/app.component.css']
 })
 export class NotificationsDialogComponent {
   notifications$: Observable<Notification[]> = this.store.select(selectNotifications); 

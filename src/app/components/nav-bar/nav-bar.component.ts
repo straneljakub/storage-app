@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectNotifications } from 'src/app/state/reducers/notifications.reducer';
 import { Notification } from 'src/notification';
-import { NotificationsDialogComponent } from '../notifications-dialog/notifications-dialog.component';
+import { NotificationsDialogComponent } from '../../../features/notifications/components/notifications-dialog/notifications-dialog.component';
 
 
 

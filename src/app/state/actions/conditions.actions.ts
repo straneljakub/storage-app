@@ -1,7 +1,7 @@
 import {createActionGroup, props} from '@ngrx/store';
 import { Condition } from 'src/condition';
 import { Material } from 'src/material';
-import { conditionFormData } from 'src/app/components/condition-dialog/condition-dialog.component';
+import { conditionFormData } from 'src/features/conditions/components/condition-dialog/condition-dialog.component';
 
 export const ConditionsActions = createActionGroup({
     source: 'Materials Page',

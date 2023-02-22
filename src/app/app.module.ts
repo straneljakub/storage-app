@@ -20,18 +20,17 @@ import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
-import { ConditionDialogComponent } from './components/condition-dialog/condition-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
 import { conditionsFeature } from './state/reducers/conditions.reducer';
-import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { EffectsModule } from '@ngrx/effects';
-import { NotificationsDialogComponent } from './components/notifications-dialog/notifications-dialog.component';
 import { MaterialEffects } from './state/effects/materials.effects';
 import { ConditionEffects } from './state/effects/conditions.effects';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MaterialDetailComponent } from './components/material-detail/material-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotificationsModule } from 'src/features/notifications/notifications.module';
+import { ConditionsModule } from 'src/features/conditions/conditions.module';
 
 
 
@@ -45,10 +44,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     NavBarComponent,
     InputDialogComponent,
     EditDialogComponent,
-    ConditionDialogComponent,
-    AlertsDialogComponent,
     ConfirmDialogComponent,
-    NotificationsDialogComponent,
     MaterialDetailComponent,
   ],
   imports: [
@@ -69,6 +65,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatBadgeModule,
     EffectsModule.forRoot([MaterialEffects, ConditionEffects]),
     ReactiveFormsModule,
+    NotificationsModule,
+    ConditionsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
