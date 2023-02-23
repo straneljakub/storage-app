@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { TranslocoService } from '@ngneat/transloco';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { selectNotifications } from 'src/app/state/reducers/notifications.reducer';
+import { selectNotifications } from 'src/features/notifications';
 import { Notification } from 'src/notification';
 import { NotificationsDialogComponent } from '../../../features/notifications/components/notifications-dialog/notifications-dialog.component';
 

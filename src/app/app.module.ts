@@ -8,7 +8,6 @@ import { TranslocoRootModule } from './transloco-root.module';
 
 import { StoreModule } from '@ngrx/store';
 import { materialsFeature } from './state/reducers/materials.reducer';
-import { notificationsFeature } from './state/reducers/notifications.reducer';
 import { MaterialsListComponent } from './components/materials-list/materials-list.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,11 +20,9 @@ import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditDialogComponent } from './components/edit-dialog/edit-dialog.component';
 import { MatSelectModule } from '@angular/material/select';
-import { conditionsFeature } from './state/reducers/conditions.reducer';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { EffectsModule } from '@ngrx/effects';
 import { MaterialEffects } from './state/effects/materials.effects';
-import { ConditionEffects } from './state/effects/conditions.effects';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MaterialDetailComponent } from './components/material-detail/material-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -53,7 +50,7 @@ import { ConditionsModule } from 'src/features/conditions/conditions.module';
     HttpClientModule,
     TranslocoRootModule,
     StoreModule.forRoot({}),
-    [StoreModule.forFeature(materialsFeature), StoreModule.forFeature(notificationsFeature), StoreModule.forFeature(conditionsFeature)],
+    StoreModule.forFeature(materialsFeature),
     BrowserAnimationsModule,
     MatButtonModule,
     MatIconModule,
@@ -63,7 +60,7 @@ import { ConditionsModule } from 'src/features/conditions/conditions.module';
     MatDialogModule,
     MatSelectModule,
     MatBadgeModule,
-    EffectsModule.forRoot([MaterialEffects, ConditionEffects]),
+    EffectsModule.forRoot(MaterialEffects),
     ReactiveFormsModule,
     NotificationsModule,
     ConditionsModule,

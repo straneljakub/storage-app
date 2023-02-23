@@ -11,6 +11,11 @@ import { AlertsDialogComponent } from './components/alerts-dialog/alerts-dialog.
 import { ConditionDialogComponent } from './components/condition-dialog/condition-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import { StoreModule } from '@ngrx/store';
+import { conditionsFeature } from './state/reducers/conditions.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { MaterialEffects } from 'src/app/state/effects/materials.effects';
+import { ConditionEffects } from './state/effects/conditions.effects';
 
 
 @NgModule({
@@ -29,6 +34,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatDialogModule,
     ReactiveFormsModule,
     MatSelectModule,
+    StoreModule.forFeature(conditionsFeature),
+    EffectsModule.forRoot(ConditionEffects),
   ]
 })
 export class ConditionsModule { }

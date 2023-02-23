@@ -8,6 +8,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatDialogModule } from '@angular/material/dialog';
+import { StoreModule } from '@ngrx/store';
+import { notificationsFeature } from './state/reducers/notifications.reducer';
 
 
 
@@ -24,6 +26,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatButtonModule,
     FormsModule,
     MatDialogModule,
+    StoreModule.forFeature(notificationsFeature),
   ]
 })
 export class NotificationsModule { }

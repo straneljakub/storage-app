@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, ofType, createEffect } from '@ngrx/effects';
-import { MaterialsActions, MaterialsApiActions } from '../actions/materials.actions';
-import { map, of } from 'rxjs';
+import { MaterialsActions, MaterialsApiActions } from 'src/app/state/actions/materials.actions';
+import { map, of } from 'rxjs'; 
 import { Action } from 'rxjs/internal/scheduler/Action';
 import { mergeMap } from 'rxjs';
 import { select, Store } from '@ngrx/store';
@@ -9,9 +9,9 @@ import { selectConditionsByEntityId } from '../selectors/conditions.selectors';
 import { Condition } from 'src/condition';
 import { ConditionsActions } from '../actions/conditions.actions';
 import { Material } from 'src/material';
-import { selectMaterialById } from '../selectors/materials.selectors';
+import { selectMaterialById } from 'src/app/state/selectors/materials.selectors';
 import { Notification } from 'src/notification';
-import { NotificationsActions } from '../actions/notifications.actions';
+import { NotificationsActions } from 'src/features/notifications';
 
 
 @Injectable()

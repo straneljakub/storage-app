@@ -4,10 +4,6 @@ import { Condition } from 'src/condition';
 import { ConditionsActions } from '../actions/conditions.actions';
 import { ConditionsApiActions } from '../actions/conditions.actions';
 
-import { ConditionDialogData } from 'src/features/conditions/components/condition-dialog/condition-dialog.component';
-
-import { selectMaterialById } from '../selectors/materials.selectors';
-import { Material } from 'src/material';
 
 
 export interface ConditionsState {

@@ -1,10 +1,10 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { selectConditionsByEntityId } from 'src/app/state/selectors/conditions.selectors';
+import { selectConditionsByEntityId } from '../../state/selectors/conditions.selectors';
 import { Observable } from 'rxjs';
 import { Condition } from 'src/condition';
-import { ConditionsActions } from 'src/app/state/actions/conditions.actions';
+import { ConditionsActions } from '../../state/actions/conditions.actions';
 import { ConditionDialogComponent } from '../condition-dialog/condition-dialog.component';
 import { conditionFormData } from '../condition-dialog/condition-dialog.component';
 import { TranslocoService } from '@ngneat/transloco';
