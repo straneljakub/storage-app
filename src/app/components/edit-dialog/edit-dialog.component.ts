@@ -32,7 +32,7 @@ export class EditDialogComponent {
 
 
   editForm = this.fb.group({
-    id: this.fb.control(this.data.id, Validators.required),
+    id: this.fb.control(this.data.id || -1, Validators.required),
     title: this.fb.control(this.data.title, Validators.required),
     count: this.fb.control(this.data.count, [Validators.required, Validators.min(0)]),
     description: this.fb.control(this.data.description, Validators.required),
