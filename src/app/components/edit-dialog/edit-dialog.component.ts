@@ -32,13 +32,17 @@ export class EditDialogComponent {
 
 
   editForm = this.fb.group({
-    title: ['', Validators.required],
-    count: ['', [Validators.required, Validators.min(0)]],
-    description: ['', Validators.required],
+    id: this.fb.control(this.data.id, Validators.required),
+    title: this.fb.control(this.data.title, Validators.required),
+    count: this.fb.control(this.data.count, [Validators.required, Validators.min(0)]),
+    description: this.fb.control(this.data.description, Validators.required),
   })
 
 
-  submit(formData: Material) {
-    this.dialogRef.close(formData);
+  submit() {
+    this.formData.title = this.editForm.value.title || this.formData.title;
+    this.formData.count = this.editForm.value.count || this.formData.count;
+    this.formData.description = this.editForm.value.description || this.formData.description;
+    this.dialogRef.close(this.formData);
   }
 }

@@ -27,11 +27,12 @@ export class InputDialogComponent {
   ) {}
   
   inputForm = this.fb.group({
-    count: [0, [Validators.required, Validators.min(0)]]
+    count: this.fb.control(0, [Validators.required, Validators.min(0)]),
   })
 
-  submit(formData: DialogResult) {
-    this.dialogRef.close(formData);
+  submit() {
+    this.formData.count = this.inputForm.value.count || this.formData.count;
+    this.dialogRef.close(this.formData);
   }
 }
   

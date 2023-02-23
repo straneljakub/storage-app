@@ -1,15 +1,15 @@
 <h1 mat-dialog-title>{{data.title}}</h1>
 <div mat-dialog-content>
-  <form #form="ngForm" (ngSubmit)="submit(formData)" [formGroup]="inputForm">
+  <form #form="ngForm" (ngSubmit)="submit()" [formGroup]="inputForm">
     <div *ngIf="inputForm.controls.count.errors && inputForm.controls.count.touched">
       <p class="text-red-500" *ngIf="inputForm.controls.count.errors['required']">{{"form.empty" | transloco}}</p>
       <p class="text-red-500" *ngIf="inputForm.controls.count.errors['min']">{{"form.negative" | transloco}}</p>
     </div>
     <mat-form-field appearance="fill">
-      <input matInput type="number" [(ngModel)]="formData.count" required name="count" formControlName="count">
+      <input matInput type="number" formControlName="count">
     </mat-form-field>
     <div mat-dialog-actions>
-      <button color="primary" mat-raised-button type="submit" [disabled]="!form.valid">{{"submitButton" |
+      <button color="primary" mat-raised-button type="submit" [disabled]="!inputForm.valid">{{"submitButton" |
         transloco}}</button>
     </div>
   </form>

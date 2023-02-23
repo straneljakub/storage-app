@@ -35,12 +35,14 @@ export class ConditionDialogComponent {
   ) {}
 
   conditionF = this.fb.group({
-    value: ["", [Validators.required, Validators.min(0)]],
-    operator: ["", Validators.required],
+    value: this.fb.control(0, [Validators.required, Validators.min(0)]),
+    operator: this.fb.control("", Validators.required),
   })
 
-  submit(conditionForm: conditionFormData) {
-    this.dialogRef.close(conditionForm);
+  submit() {
+    this.conditionForm.value = this.conditionF.value.value || this.conditionForm.value;
+    this.conditionForm.operator = this.conditionF.value.operator || this.conditionForm.operator;
+    this.dialogRef.close(this.conditionForm);
   }
 
 
