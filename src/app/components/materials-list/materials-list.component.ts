@@ -101,6 +101,6 @@ export class MaterialsListComponent {
   }
 
   MaterialDetail(id: number) {
-    this.router.navigate(['/material-detail-component', {id: id}]);
+    this.router.navigate(['/material-detail-component', id]);
   }
 }

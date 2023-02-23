@@ -54,10 +54,17 @@ export class ConditionEffects {
                     operator: action.condition.operator,
                     date: '',
                 }
-                return NotificationsActions.createNotification({ notification: newNotification })
+                return NotificationsActions.createNotification({ notification: newNotification });
             }
             )
         ));
+    
+    $deleteCondition = createEffect(() =>
+        this.actions$.pipe(
+            ofType(ConditionsActions.conditionMet),
+            map((action) => 
+                ConditionsActions.deleteCondition({id: action.condition.id}))
+    ));
 
     constructor(
         private actions$: Actions,

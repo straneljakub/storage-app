@@ -5,7 +5,7 @@ import { MaterialsListComponent } from './components/materials-list/materials-li
 
 const routes: Routes = [
   {path: 'materials-list-component', component: MaterialsListComponent},
-  {path: 'material-detail-component', component: MaterialDetailComponent},
+  {path: 'material-detail-component/:id', component: MaterialDetailComponent},
 ];
 
 @NgModule({
