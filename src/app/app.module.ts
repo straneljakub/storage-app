@@ -62,7 +62,7 @@ import { ConditionEffects } from 'src/features/conditions';
     MatSelectModule,
     MatBadgeModule,
     EffectsModule.forRoot(MaterialEffects),
-    EffectsModule.forFeature(ConditionEffects),
+
     ReactiveFormsModule,
     NotificationsModule,
     ConditionsModule,

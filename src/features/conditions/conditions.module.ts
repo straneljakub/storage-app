@@ -35,7 +35,7 @@ import { ConditionEffects } from './state/effects/conditions.effects';
     ReactiveFormsModule,
     MatSelectModule,
     StoreModule.forFeature(conditionsFeature),
-    EffectsModule.forRoot(ConditionEffects),
+    EffectsModule.forFeature(ConditionEffects),
   ]
 })
 export class ConditionsModule { }
