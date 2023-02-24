@@ -14,7 +14,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { StoreModule } from '@ngrx/store';
 import { conditionsFeature } from './state/reducers/conditions.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { MaterialEffects } from 'src/app/state/effects/materials.effects';
 import { ConditionEffects } from './state/effects/conditions.effects';
 
 
