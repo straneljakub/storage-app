@@ -28,6 +28,7 @@ import { MaterialDetailComponent } from './components/material-detail/material-d
 import { ReactiveFormsModule } from '@angular/forms';
 import { NotificationsModule } from 'src/features/notifications/notifications.module';
 import { ConditionsModule } from 'src/features/conditions/conditions.module';
+import { ConditionEffects } from 'src/features/conditions';
 
 
 
@@ -61,6 +62,7 @@ import { ConditionsModule } from 'src/features/conditions/conditions.module';
     MatSelectModule,
     MatBadgeModule,
     EffectsModule.forRoot(MaterialEffects),
+    EffectsModule.forFeature(ConditionEffects),
     ReactiveFormsModule,
     NotificationsModule,
     ConditionsModule,
